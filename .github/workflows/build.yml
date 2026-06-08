@@ -27,8 +27,8 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Inject API Key securely
-      run: echo "GEMINI_API_KEY=AQ.Ab8RN6I3fsrffunZ0BUS9pO1Q2bWiVYT8HB2PNRGyxCijNFjyQ" >> local.properties
+    - name: Inject API Key SECURELY
+      run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> local.properties
 
     - name: Generate Debug Keystore
       run: keytool -genkey -v -keystore debug.keystore -storepass android -alias androiddebugkey -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "C=US, O=Android, CN=Android Debug"
